@@ -1,0 +1,16 @@
+{
+  "name": "living-wiki-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automation scripts for Living Wiki",
+  "scripts": {
+    "health-check": "npx tsx health-check.ts"
+  },
+  "dependencies": {
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
