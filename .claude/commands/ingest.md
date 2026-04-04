@@ -54,7 +54,7 @@ Read the raw content and produce structured wiki entries:
 1. **Determine domain(s)** -- use `system/domain_registry.md` synonyms for routing
 2. **Extract key points** -- facts, insights, actionable items
 3. **Search before create** -- check if existing notes cover this topic. Update rather than duplicate.
-4. **Create notes** with proper frontmatter:
+4. **Create notes** with proper frontmatter AND body links:
    ```yaml
    ---
    type: reference | note
@@ -67,9 +67,24 @@ Read the raw content and produce structured wiki entries:
    related: []
    aliases: []
    ---
+
+   # [Title]
+
+   *Compiled from: [[raw/YYYY-MM-DD-slug]]*
+   *Source: [URL or description](https://...)*
+
+   [Compiled content here]
    ```
+   Note: The `compiled_from` in frontmatter is for data. The `[[wiki-link]]` in the body is for Obsidian clickability. Both are required.
 5. **Add wiki-links** to related existing notes
-6. **Update the raw file's `compiled_to`** with the paths of created notes
+6. **Update the raw file's `compiled_to`** with the paths of created notes, AND add clickable links in the raw file's body:
+   ```markdown
+   **Compiled to:** [[note-name-1]], [[note-name-2]]
+
+   ---
+
+   [Raw content below]
+   ```
 
 ### 5. Multi-Topic Content
 

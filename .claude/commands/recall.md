@@ -54,25 +54,39 @@ Don't just dump a file list. Present results as a coherent summary:
 - [[related-note-1]], [[related-note-2]]
 ```
 
-### 4. Auto-File Synthesis (Filing Loop)
+### 4. Auto-File Synthesis (REQUIRED -- Filing Loop)
 
-If the answer involved genuine synthesis (pulling insights from 2+ notes to create a new connection or answer), **auto-file the synthesis back into the wiki**:
+**This step is mandatory, not optional.** If your answer drew from 2 or more notes, you MUST file the synthesis back into the wiki. This is what makes the wiki self-improving.
 
-1. Create a note with frontmatter:
+**How to file:**
+
+1. Create a new note in the appropriate domain folder (or `synthesis/` for cross-domain):
    ```yaml
+   ---
    type: synthesis
+   domain: [primary domain]
+   created: YYYY-MM-DD
    source: recall-query
    query: "[the original question]"
-   ```
-2. Add wiki-links to all source notes
-3. File in the appropriate domain folder, or `synthesis/` for cross-domain answers
-4. Update daily log and git commit
-5. Mention to the user: "Filed this synthesis to [[note-name]]"
+   tags: []
+   related: [source-note-1, source-note-2]
+   aliases: []
+   ---
 
-**Skip filing when:**
+   # [Descriptive title]
+
+   *Synthesized from [[source-note-1]], [[source-note-2]] on YYYY-MM-DD*
+
+   [The synthesized answer content]
+   ```
+2. The body text MUST include `[[wiki-links]]` to all source notes (these are clickable in Obsidian)
+3. Update daily log with a reference to the new synthesis note
+4. Git commit: `recall-synthesis YYYY-MM-DD: [brief description]`
+5. Tell the user: "Filed this synthesis to [[note-name]]"
+
+**Only skip filing when:**
 - The answer came from a single note (no synthesis occurred)
-- The query was trivial or conversational
-- The answer is short/simple (no new insight generated)
+- The query was trivial ("how many notes do I have?")
 
 ### 5. Cross-Domain Connections
 

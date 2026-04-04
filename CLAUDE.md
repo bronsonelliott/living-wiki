@@ -117,21 +117,20 @@ source_url: ""                     # only for ingested URLs
 
 Natural language always works too -- "let me brain dump", "quick task", "I had an idea" all route through dump logic. For ingestion: "save this", "add this", "look at this", "check this out" signal ingest intent.
 
-## Filing Loop
+## Filing Loop (REQUIRED)
 
-When `/recall` produces a substantive synthesis (pulling from 2+ notes to create a new insight), **auto-file the synthesis back into the wiki**:
+**This is mandatory, not optional.** When `/recall` draws from 2+ notes to produce an answer, you MUST file the synthesis back into the wiki. This is what makes the wiki self-improving.
 
 1. Create a note with `type: synthesis` and `source: recall-query` in frontmatter
 2. Include a `query:` field preserving the original question
-3. Add wiki-links to all source notes
+3. Include `[[wiki-links]]` to all source notes **in the body text** (not just frontmatter)
 4. File in the appropriate domain folder, or `synthesis/` for cross-domain answers
 5. Update daily log and git commit
+6. Tell the user: "Filed this synthesis to [[note-name]]"
 
-**Skip filing when:**
+**Only skip filing when:**
 - The answer comes from a single note (no synthesis occurred)
-- The query was trivial or conversational
-
-This makes the wiki self-improving -- every good question makes the system smarter.
+- The query was trivial ("how many notes do I have?")
 
 ## Ingestion Pipeline
 
@@ -159,6 +158,7 @@ When the user sends content with ingest intent (`/ingest`, "save this", "add thi
    - **Search before create** -- update existing notes if the topic is already covered
    - Create notes with proper frontmatter, wiki-links, and domain routing
    - Update `compiled_to` in the raw file and add `compiled_from` to wiki notes
+   - **Include clickable wiki-links in both directions:** raw file body must have `[[compiled-note]]` links, compiled note body must have `[[raw/source-file]]` link. Frontmatter stores the path for data; body wiki-links provide Obsidian clickability.
 4. **Log** the ingestion in daily log
 5. **Git commit**: `ingest YYYY-MM-DD: [source type] -> [N] notes`
 
