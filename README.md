@@ -14,6 +14,12 @@ Living Wiki is an open-source framework that turns [Claude Code](https://claude.
 
 You never manually organize files. You never fill templates. You never worry about where things go. You talk, the system works.
 
+<p align="center">
+  <img src="docs/images/graph-view.jpg" alt="A personal Living Wiki vault in Obsidian's graph view -- every node is a note, every line is a connection made automatically." width="700">
+  <br>
+  <em>A personal vault after a few weeks of use. Every node is a note, every line is a connection made automatically.</em>
+</p>
+
 ---
 
 ## The Three Loops
