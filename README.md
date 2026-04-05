@@ -17,7 +17,7 @@ You never manually organize files. You never fill templates. You never worry abo
 <p align="center">
   <img src="docs/images/graph-view.jpg" alt="A personal Living Wiki vault in Obsidian's graph view -- every node is a note, every line is a connection made automatically." width="700">
   <br>
-  <em>A personal vault after a few weeks of use. Every node is a note, every line is a connection made automatically. (Blurred for privacy.)</em>
+  <em>A personal vault after a few weeks of use. Every node is a note, every line is a connection made automatically.</em>
 </p>
 
 ---
