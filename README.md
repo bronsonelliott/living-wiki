@@ -76,6 +76,25 @@ After your first dump, check the vault -- you'll see organized notes in domain f
 
 ---
 
+## Web UI
+
+Don't want to use the terminal? Living Wiki includes a lightweight web interface. Two buttons, one text box -- that's it.
+
+```
+node ui/server.js
+# Open http://localhost:3456
+```
+
+**Capture** files your thoughts, URLs, or pasted content. **Ask** searches your vault and synthesizes an answer. Claude Code handles everything behind the scenes.
+
+<p align="center">
+  <img src="docs/images/web-ui.png" alt="Living Wiki web interface showing Capture and Ask in action." width="700">
+  <br>
+  <em>The web UI in action -- capture thoughts and query your wiki from the browser.</em>
+</p>
+
+---
+
 ## What You Get
 
 ### Capture and Organize
